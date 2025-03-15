@@ -1,6 +1,6 @@
 package com.my_game.model;
 
-public class User {
+public class Book {
     private Long id;
-    private String userName;
+    private Author author;
 }
