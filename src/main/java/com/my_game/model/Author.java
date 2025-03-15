@@ -5,6 +5,7 @@ import java.util.List;
 public class Author {
     private Long id;
     private String name;
-    private String surName;
+    private String genre;
+    private int age;
     private List<Book> bookList;
 }
