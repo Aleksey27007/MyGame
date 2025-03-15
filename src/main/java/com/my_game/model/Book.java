@@ -1,15 +1,20 @@
 package com.my_game.model;
 
 public class Book {
-    private Long id;
+    private int id;
     private String name;
     private Author author;
 
-    public Long getId() {
+    public Book(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
