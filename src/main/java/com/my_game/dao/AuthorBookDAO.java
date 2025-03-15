@@ -23,9 +23,9 @@ public class AuthorBookDAO {
             ResultSet rs = preparedStatement.executeQuery();
 
             while(rs.next()) {
-                int id = rs.getInt("id");
-                int author_id = rs.getInt("author_id");
-                int book_id = rs.getInt("book_id");
+                Integer id = rs.getInt("id");
+                Integer author_id = rs.getInt("author_id");
+                Integer book_id = rs.getInt("book_id");
 
                 list.add(new AuthorBook(id, author_id, book_id));
             }

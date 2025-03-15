@@ -4,10 +4,11 @@ import com.my_game.model.Book;
 
 import java.util.List;
 
-public class AuthorDTO {
-
-    private String name;
-    private String genre;
-    private int age;
-    private List<Book> books;
+public record AuthorDTO(
+        Integer id,
+        String name,
+        String genre,
+        Integer age,
+        List<Book>books
+) {
 }

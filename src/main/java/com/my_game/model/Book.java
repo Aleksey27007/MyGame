@@ -1,16 +1,16 @@
 package com.my_game.model;
 
 public class Book {
-    private int id;
+    private Integer id;
     private String name;
     private Author author;
 
-    public Book(int id, String name) {
+    public Book(Integer id, String name) {
         this.id = id;
         this.name = name;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

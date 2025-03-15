@@ -54,7 +54,7 @@ public class BookDAOImpl implements DefaultDAO {
     }
 
     @Override
-    public List<Book> update(int id, String newName) throws SQLException{
+    public List<Book> update(Integer id, String newName) throws SQLException{
 
         String query = "UPDATE books SET name='?' WHERE id='?'";
 
@@ -70,7 +70,7 @@ public class BookDAOImpl implements DefaultDAO {
     }
 
     @Override
-    public List<Book> delete(int id) throws SQLException{
+    public List<Book> delete(Integer id) throws SQLException{
 
         String query = "DELETE FROM authors WHERE id='?'";
 

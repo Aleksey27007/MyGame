@@ -3,13 +3,13 @@ package com.my_game.model;
 import java.util.List;
 
 public class Author {
-    private int id;
+    private Integer id;
     private String name;
     private String genre;
-    private int age;
+    private Integer age;
     private List<Book> bookList;
 
-    public Author(int id, String name, String genre, int age) {
+    public Author(Integer id, String name, String genre, Integer age) {
         this.id = id;
         this.name = name;
         this.genre = genre;
@@ -20,7 +20,7 @@ public class Author {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -44,7 +44,7 @@ public class Author {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 

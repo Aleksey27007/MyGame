@@ -1,17 +1,17 @@
 package com.my_game.model;
 
 public class AuthorBook {
-    int id;
-    int authorID;
-    int bookID;
+    Integer id;
+    Integer authorID;
+    Integer bookID;
 
-    public AuthorBook(int id, int authorID, int bookID) {
+    public AuthorBook(Integer id, Integer authorID, Integer bookID) {
         this.id = id;
         this.authorID = authorID;
         this.bookID = bookID;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -19,7 +19,7 @@ public class AuthorBook {
         this.id = id;
     }
 
-    public int getAuthorID() {
+    public Integer getAuthorID() {
         return authorID;
     }
 
@@ -27,7 +27,7 @@ public class AuthorBook {
         this.authorID = authorID;
     }
 
-    public int getBookID() {
+    public Integer getBookID() {
         return bookID;
     }
 

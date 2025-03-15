@@ -53,7 +53,7 @@ public class AuthorDAOImpl implements DefaultDAO {
     }
 
     @Override
-    public List<Author> update(int id, String newName) throws SQLException{
+    public List<Author> update(Integer id, String newName) throws SQLException{
 
         String query = "UPDATE authors SET name = '?' WHERE id = '?'";
 
@@ -69,7 +69,7 @@ public class AuthorDAOImpl implements DefaultDAO {
     }
 
     @Override
-    public List<Author> delete(int id) throws SQLException{
+    public List<Author> delete(Integer id) throws SQLException{
 
         String query = "DELETE FROM authors WHERE id='?'";
 
