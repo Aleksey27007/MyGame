@@ -10,6 +10,27 @@
 
     <packaging>jar</packaging>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>10.16.0</version>
+
+                <configuration>
+                    <validateMigrationNaming>true</validateMigrationNaming>
+                    <locations>
+                        <location>filesystem:src/main/resources/migrations</location>
+                    </locations>
+
+                    <url>jdbc:mysql://localhost:3306/book_authors_db_2025</url>
+                    <user>root</user>
+                    <password>admin123</password>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
     <properties>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
