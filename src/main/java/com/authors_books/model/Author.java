@@ -1,4 +1,4 @@
-package com.my_game.model;
+package com.authors_books.model;
 
 import java.util.List;
 
