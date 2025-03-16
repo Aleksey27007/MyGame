@@ -1,7 +1,7 @@
-package com.my_game.dao;
+package com.authors_books.dao;
 
-import com.my_game.datasource.DataSource;
-import com.my_game.model.AuthorBook;
+import com.authors_books.datasource.DataSource;
+import com.authors_books.model.AuthorBook;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

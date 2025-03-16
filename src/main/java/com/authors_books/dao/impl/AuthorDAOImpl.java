@@ -1,40 +1,38 @@
-package com.my_game.dao.impl;
+package com.authors_books.dao.impl;
 
-import com.my_game.dao.DefaultDAO;
-import com.my_game.datasource.DataSource;
-import com.my_game.model.Book;
+import com.authors_books.dao.DefaultDAO;
+import com.authors_books.datasource.DataSource;
+import com.authors_books.model.Author;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDAOImpl implements DefaultDAO {
-
+public class AuthorDAOImpl implements DefaultDAO {
     private final Connection CONNECTION = DataSource.getDataSource().getConnection();
 
+
     @Override
-    public void create(Object entity) throws SQLException {
+    public Author create(Object entity) throws SQLException {
         CONNECTION.setAutoCommit(false);
 
-        Book book = (Book) entity;
-        String query = "INSERT books(name, author) VALUES(?, ?)";
+        Author author = (Author) entity;
+        String query = "INSERT authors(name, genre, age) VALUES(?, ?, ?)";
 
         try (PreparedStatement preparedStatement = CONNECTION.prepareStatement(query)) {
 
-            preparedStatement.setString(1, book.getName());
-            preparedStatement.setString(2, book.getAuthor().getName());
+            preparedStatement.setString(1, author.getName());
+            preparedStatement.setString(2, author.getGenre());
+            preparedStatement.setInt(3, author.getAge());
 
             preparedStatement.executeUpdate();
         }
-
+        return author;
     }
 
     @Override
-    public List<Book> read(String tableName) throws SQLException {
-        List<Book> books = new ArrayList<>();
+    public List<Author> read(String tableName) throws SQLException {
+        List<Author> authors = new ArrayList<>();
 
         String query = "SELECT * FROM " + tableName;
 
@@ -45,18 +43,19 @@ public class BookDAOImpl implements DefaultDAO {
             while(rs.next()) {
                 int id = rs.getInt("id");
                 String name = rs.getString("name");
-//                String author = rs.getString("author");
+                String genre = rs.getString("genre");
+                int age = rs.getInt("age");
 
-                books.add(new Book(id, name));
+                authors.add(new Author(id, name, genre, age));
             }
         }
-        return books;
+        return authors;
     }
 
     @Override
-    public List<Book> update(Integer id, String newName) throws SQLException{
+    public List<Author> update(Integer id, String newName) throws SQLException{
 
-        String query = "UPDATE books SET name='?' WHERE id='?'";
+        String query = "UPDATE authors SET name = '?' WHERE id = '?'";
 
         try(PreparedStatement preparedStatement = CONNECTION.prepareStatement(query)) {
 
@@ -66,11 +65,11 @@ public class BookDAOImpl implements DefaultDAO {
 
         }
 
-        return read("books");
+        return read("authors");
     }
 
     @Override
-    public List<Book> delete(Integer id) throws SQLException{
+    public List<Author> delete(Integer id) throws SQLException{
 
         String query = "DELETE FROM authors WHERE id='?'";
 
@@ -82,6 +81,6 @@ public class BookDAOImpl implements DefaultDAO {
 
         }
 
-        return read("books");
+        return read("authors");
     }
 }
