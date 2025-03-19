@@ -1,7 +1,7 @@
 package com.authors_books.dto;
 
 public record BookDTO(
-        Long id,
+        Integer id,
         String name,
         String author
 ) {

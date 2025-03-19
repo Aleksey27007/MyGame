@@ -9,11 +9,12 @@ public class Author {
     private Integer age;
     private List<Book> bookList;
 
-    public Author(Integer id, String name, String genre, Integer age) {
+    public Author(Integer id, String name, String genre, Integer age, String book) {
         this.id = id;
         this.name = name;
         this.genre = genre;
         this.age = age;
+//        this.bookList.add()
     }
 
     public int getId() {

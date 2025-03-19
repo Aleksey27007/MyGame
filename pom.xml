@@ -49,8 +49,8 @@
     </build>
 
     <properties>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <org.mapstruct.version>1.5.5.Final</org.mapstruct.version>
     </properties>
 

@@ -1,11 +1,9 @@
 package com.authors_books.dto;
 
-import java.util.List;
-
 public record AuthorDTO(
-        Long id,
+        Integer id,
         String name,
         String genre,
-        List<String> booksName
+        String bookList
 ) {
 }
